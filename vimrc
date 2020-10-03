@@ -11,7 +11,7 @@ set showmode
 set showcmd
 
 "支持使用鼠标"
-set mouse=a
+"set mouse=a
 
 "使用 utf-8 编码"
 set encoding=utf-8
@@ -122,3 +122,22 @@ set list
 "命令模式下按Tab 进行操作补全"
 set wildmenu
 set wildmode=longest:list,full
+
+" Plugin setting
+" vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" markdown-previw
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+call plug#end()
+
