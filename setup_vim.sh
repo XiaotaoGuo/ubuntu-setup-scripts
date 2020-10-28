@@ -8,4 +8,4 @@ fi
 
 echo using script from: $script_dir/vimrc
 cd $HOME
-ln -s $script_dir/vimrc .vimrc
+ln -s $script_dir/.vimrc .vimrc
