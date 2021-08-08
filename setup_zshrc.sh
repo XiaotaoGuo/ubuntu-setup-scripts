@@ -9,3 +9,7 @@ fi
 echo using script from: $script_dir/.zshrc
 cd $HOME
 ln -s $script_dir/.zshrc .zshrc
+
+# use zsh as default shell
+sudo apt install zsh
+chsh -s $(which zsh)
